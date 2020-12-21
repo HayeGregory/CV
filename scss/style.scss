@@ -1,7 +1,55 @@
-html,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+// les fichiers partials : _[nomFichier] (_reset.scss)
+// pour importer le fichier partial, on peut ommetre _ et .css
+// on ne met pas les variables pour y acceder direct
+@import "reset";
+@import "base";
+
+.grid-container {
+  display: grid;
+  min-height: 100vh;
+  grid:
+    "picture header" auto
+    "aside main" 1fr
+    / 350px auto;
 }
-/* test*/
+
+header {
+  grid-area: header;
+  background: linear-gradient(to right, var(--primary), var(--light));
+  min-height: 30rem;
+  padding: 10rem 5rem;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+    font-weight: 300;
+    letter-spacing: 3rem;
+  }
+  p {
+    letter-spacing: 0.5rem;
+  }
+}
+
+.picture {
+  grid-area: picture;
+  padding: 6rem;
+  background: var(--background);
+  img {
+    border-radius: 100%;
+  }
+}
+
+aside {
+  grid-area: aside;
+  // background: green;
+}
+
+main {
+  grid-area: main;
+  // background: purple;
+}
