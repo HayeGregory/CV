@@ -1,0 +1,22 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "CV GHA",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "node-sass -w scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HayeGregory/CV.git"
+  },
+  "author": "GHA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HayeGregory/CV/issues"
+  },
+  "homepage": "https://github.com/HayeGregory/CV#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
