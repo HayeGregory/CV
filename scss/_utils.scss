@@ -1,0 +1,19 @@
+// classes utilitaires (helper)
+// nommenclature mb-5 :
+// mb   : propriete ==> [m]argin [b]ottom
+// -    : separateur
+// 5    : valeur de la proprieté
+
+// x --> horizontal (y pour vertical)
+// .mx-1 {
+//     margin-left : 1rem;
+//     margin-right: 1rem;
+// }
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}

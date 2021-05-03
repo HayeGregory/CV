@@ -1,0 +1,19 @@
+// Mes classes generiques
+
+// classe = "title-small"
+.title {
+  &-small {
+    letter-spacing: 0.5rem;
+    font-size: 1.7rem;
+  }
+}
+
+// classe = "text-primary" --> stars
+.text {
+  &-primary {
+    color: var(--primary);
+  }
+  &-hint {
+    color: var(--hint);
+  }
+}
