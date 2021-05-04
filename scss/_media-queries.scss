@@ -1,0 +1,29 @@
+// media-queries bootstrap
+
+@mixin xs {
+  /* Landscape phones and down */
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin md {
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  /* Large desktop */
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

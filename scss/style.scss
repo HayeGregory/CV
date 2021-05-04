@@ -6,23 +6,31 @@
 @import "base";
 @import "utils";
 @import "classes";
+@import "media-queries";
 
 .grid-container {
   display: grid;
-  min-height: 100vh;
   grid:
     "picture header" auto
     "aside main" 1fr
     "footer footer" auto
     / 350px auto;
 
-  min-height: 100vh;
+  @include xs {
+    grid:
+      "header" auto
+      "picture" auto
+      "main" auto
+      "aside" auto
+      "footer" auto
+      / auto;
+  }
 }
 
 header {
   grid-area: header;
   background: linear-gradient(to right, var(--primary), var(--light));
-  min-height: 32rem;
+  min-height: 30rem;
   padding: 10rem 5rem;
   text-align: center;
   color: white;
@@ -31,11 +39,18 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include xs {
+    padding: 5rem 2rem;
+  }
   h1 {
     font-size: 6rem;
     line-height: 8rem;
     font-weight: 300;
     letter-spacing: 3rem;
+    @include xs {
+      font-size: 4rem;
+      letter-spacing: 1rem;
+    }
   }
   p {
     font-size: 2.5rem;
@@ -49,10 +64,14 @@ header {
 
 .picture {
   grid-area: picture;
-  padding: 6rem;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--background);
   img {
-    border-radius: 2rem;
+    border-radius: 50%;
   }
   border-right: 1px solid var(--border);
 }
@@ -139,6 +158,9 @@ aside {
 main {
   grid-area: main;
   padding: 5rem;
+  @include xs {
+    padding: 5rem 2.5rem;
+  }
   h2 {
     margin-bottom: 4rem;
   }
@@ -183,8 +205,10 @@ footer {
   justify-content: center;
   align-items: center;
   color: white;
-
   padding: 5rem;
+  @include xs {
+    padding: 5rem 2.5rem;
+  }
   background: var(--text);
 
   h2 {
@@ -229,6 +253,9 @@ footer {
       border: 0;
       line-height: 2rem;
       min-width: 400px;
+      @include xs {
+        min-width: 200px;
+      }
       padding: 1rem 2rem;
       &::placeholder {
         color: var(--text);

@@ -66,26 +66,37 @@ img {
 
 .grid-container {
   display: grid;
-  min-height: 100vh;
   grid: "picture header" auto "aside main" 1fr "footer footer" auto / 350px auto;
-  min-height: 100vh; }
+  /* Landscape phones and down */ }
+  @media (max-width: 480px) {
+    .grid-container {
+      grid: "header" auto "picture" auto "main" auto "aside" auto "footer" auto / auto; } }
 
 header {
   grid-area: header;
   background: linear-gradient(to right, var(--primary), var(--light));
-  min-height: 32rem;
+  min-height: 30rem;
   padding: 10rem 5rem;
   text-align: center;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  /* Landscape phones and down */ }
+  @media (max-width: 480px) {
+    header {
+      padding: 5rem 2rem; } }
   header h1 {
     font-size: 6rem;
     line-height: 8rem;
     font-weight: 300;
-    letter-spacing: 3rem; }
+    letter-spacing: 3rem;
+    /* Landscape phones and down */ }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 4rem;
+        letter-spacing: 1rem; } }
   header p {
     font-size: 2.5rem;
     letter-spacing: 0.5rem; }
@@ -95,11 +106,15 @@ header {
 
 .picture {
   grid-area: picture;
-  padding: 6rem;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--background);
   border-right: 1px solid var(--border); }
   .picture img {
-    border-radius: 2rem; }
+    border-radius: 50%; }
 
 aside {
   grid-area: aside;
@@ -166,7 +181,11 @@ aside {
 
 main {
   grid-area: main;
-  padding: 5rem; }
+  padding: 5rem;
+  /* Landscape phones and down */ }
+  @media (max-width: 480px) {
+    main {
+      padding: 5rem 2.5rem; } }
   main h2 {
     margin-bottom: 4rem; }
   main p {
@@ -202,7 +221,11 @@ footer {
   align-items: center;
   color: white;
   padding: 5rem;
+  /* Landscape phones and down */
   background: var(--text); }
+  @media (max-width: 480px) {
+    footer {
+      padding: 5rem 2.5rem; } }
   footer h2 {
     margin-bottom: 3rem; }
   footer form {
@@ -234,6 +257,10 @@ footer {
       border: 0;
       line-height: 2rem;
       min-width: 400px;
+      /* Landscape phones and down */
       padding: 1rem 2rem; }
+      @media (max-width: 480px) {
+        footer form input {
+          min-width: 200px; } }
       footer form input::placeholder {
         color: var(--text); }
