@@ -29,7 +29,17 @@
 
 header {
   grid-area: header;
-  background: linear-gradient(to right, var(--primary), var(--light));
+  //background-size: cover;
+  background-image: linear-gradient(
+      to top,
+      rgba(66, 154, 255, 0.7),
+      rgba(10, 80, 133, 0.7)
+    ),
+    url("../img/fond.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+
   min-height: 30rem;
   padding: 10rem 5rem;
   text-align: center;
@@ -62,6 +72,10 @@ header {
   }
 }
 
+header p {
+  animation: move-top 1s;
+}
+
 .picture {
   grid-area: picture;
   min-height: 30rem;
@@ -73,7 +87,15 @@ header {
   img {
     border-radius: 50%;
   }
+
   border-right: 1px solid var(--border);
+}
+.picture img {
+  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 4s; /* Firefox < 16 */
+  -ms-animation: fadein 4s; /* Internet Explorer */
+  -o-animation: fadein 4s; /* Opera < 12.1 */
+  animation: fadein 4s;
 }
 
 aside {
@@ -95,12 +117,12 @@ aside {
   }
   .bar-skill {
     margin: 2rem 0;
-    height: 5px;
-    background: var(--hint);
+    height: 3px;
+    background: var(--border);
     position: relative; // les barres pourront ainsi se repositionner au premier element relatif
     .bar-skill-progress {
       position: absolute;
-      height: 5px;
+      height: 3px;
       top: 0;
       left: 0;
       width: var(--htmls-scss);
@@ -110,18 +132,18 @@ aside {
       position: absolute;
       height: 10px;
       width: 10px;
-      background: var(--dark);
+      background: var(--primary);
       left: calc(var(--htmls-scss) - 5px);
-      top: -2.5px;
+      top: -3.25px;
       transform: rotate(45deg);
     }
   }
   .stars-container {
     display: flex;
-    color: var(--hint);
+    color: var(--border);
     margin: 2rem 0 3rem 0;
     i {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin: 0 1rem;
     }
   }
@@ -168,6 +190,7 @@ main {
     letter-spacing: 0.1rem;
     line-height: 3rem;
   }
+
   .experience {
     display: flex;
     margin: 6rem 0;
@@ -193,6 +216,11 @@ main {
       margin: 2rem 0;
       list-style: circle;
       padding-left: 4rem;
+      ul {
+        list-style: square;
+        margin: 0.7rem;
+        padding-left: 2rem;
+      }
     }
   }
 }
