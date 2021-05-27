@@ -9,14 +9,14 @@
 
 @mixin sm {
   /* Landscape phone to portrait tablet */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     @content;
   }
 }
 
 @mixin md {
   /* Portrait tablet to landscape and desktop */
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media (min-width: 769px) and (max-width: 979px) {
     @content;
   }
 }
@@ -24,6 +24,12 @@
 @mixin xl {
   /* Large desktop */
   @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
     @content;
   }
 }

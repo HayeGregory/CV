@@ -16,6 +16,15 @@
     "footer footer" auto
     / 350px auto;
 
+  @include sm {
+    grid:
+      "header" auto
+      "picture" auto
+      "main" auto
+      "aside" auto
+      "footer" auto
+      / auto;
+  }
   @include xs {
     grid:
       "header" auto
@@ -177,6 +186,25 @@ aside {
   }
 }
 
+@include sm {
+  aside {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .block {
+      width: 40%;
+    }
+  }
+}
+@include xs {
+  aside {
+    display: block;
+    .block {
+      width: auto;
+    }
+  }
+}
+
 main {
   grid-area: main;
   padding: 5rem;
@@ -288,6 +316,93 @@ footer {
       &::placeholder {
         color: var(--text);
       }
+    }
+  }
+}
+
+/*  LE BORDEL XDDDDDDDDDDDDDDDDDDDDDD */
+
+@include print {
+  /* my style */
+  .grid-container {
+    display: grid;
+    grid:
+      "header header" auto
+      "aside main" auto
+      / 1fr 5fr;
+  }
+  footer,
+  .picture {
+    display: none;
+  }
+  header {
+    padding: 0 !important;
+    grid-area: header;
+    background-image: linear-gradient(
+        to top,
+        rgba(66, 154, 255, 0.7),
+        rgba(10, 80, 133, 0.7)
+      ),
+      url("../img/fond.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+
+    text-align: center;
+    // centrer le texte :
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 3rem !important;
+      line-height: 0.5rem;
+      font-weight: 300;
+      letter-spacing: 0.5rem;
+    }
+    p {
+      font-size: 2.5rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+  aside {
+    font-size: 10pt !important;
+    padding: 0.5rem 2rem;
+    margin-right: 10px;
+    display: block;
+    .title-small {
+      font-size: 12pt !important;
+    }
+    h3 {
+      font-size: 10pt;
+    }
+    .block {
+      width: auto;
+    }
+  }
+  main {
+    font-size: 10pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: justify;
+    h2,
+    .mb-5 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    p {
+      line-height: 10pt !important;
+      margin: 0.5rem 0 !important ;
+    }
+    .experience {
+      margin: 1rem 0 !important;
+      padding: 0 !important;
+    }
+    .title-small {
+      font-size: 12pt !important;
+      margin: 2rem 0 !important;
+      padding: 0 !important;
     }
   }
 }
