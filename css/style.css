@@ -314,7 +314,7 @@ aside .social-container p {
     display: block;
   }
   aside .block {
-    width: auto;
+    width: 100%;
   }
 }
 main {
